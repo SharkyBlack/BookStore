@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* 1. Standardize the body for both modes */
+body {
+  font-family: "Poppins", sans-serif;
+  @apply bg-white text-black transition-colors duration-300;
+}
+
+/* 2. Tell Tailwind to use the 'dark' class as the trigger */
+@variant dark (&:where(.dark, .dark *));
+
+/* 3. Force the background for the entire app when .dark is active */
+.dark body {
+  background-color: #0f172a; /* slate-900 */
+  color: white;
+}
+
+/* 4. Fix for DaisyUI components (Base-100) */
+.dark .bg-base-100 {
+  background-color: #1e293b !important; /* slate-800 for cards */
+  color: white !important;
+}
