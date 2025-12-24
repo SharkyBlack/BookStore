@@ -1,5 +1,5 @@
 import React from "react";
-import list from '../../public/list.json'
+
 function Cards({ item }) {
   console.log(item);
   return (
